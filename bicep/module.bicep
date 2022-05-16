@@ -13,6 +13,7 @@ param storagePrefix string
   'Standard_RAGZRS'
 ])
 param storageSKU string = 'Standard_LRS'
+
 param location string
 
 var uniqueStorageName = '${storagePrefix}${uniqueString(resourceGroup().id)}'
