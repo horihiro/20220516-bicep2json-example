@@ -6,6 +6,7 @@ on:
       - main  # Set a branch name to trigger deployment
     paths:
       - '**.bicep'
+  workflow_dispatch
 
 env:
   out_dir: public
