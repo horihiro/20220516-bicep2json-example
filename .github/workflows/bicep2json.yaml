@@ -10,7 +10,7 @@ on:
 
 env:
   out_dir: public
-  main_bicep_file: main_parent.bicep
+  main_bicep_file: bicep/main_parent.bicep
   publish_branch: json_template
 
 jobs:
@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup Hugo
+      - name: Build bicep
         run: |
           mkdir ./${{ env.out_dir }}
           az bicep build --file ${{ env.main_bicep_file }} --outdir ${{ env.out_dir }}
